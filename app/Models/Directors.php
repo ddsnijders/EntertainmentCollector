@@ -4,13 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
-class Director extends Model
+class Directors extends Model implements Person
 {
-    private string $firstName;
-    private string $lastName;
-    private int $nationality;
-    private string $uuid;
+    protected string $firstName;
+    protected string $lastName;
+    protected int $nationality;
+    protected string $uuid;
 
     public function getFirstName(): string{
         return $this->firstName;
@@ -27,6 +28,6 @@ class Director extends Model
     public function getUUID(): string{
         return $this->uuid;
     }
-    
+
     use HasFactory;
 }

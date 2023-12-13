@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use app\Interfaces\Person;
+use App\Interfaces\Person;
 
-class Actor extends Model implements Person
+class Actors extends Model implements Person
 {
-    private string $firstName;
-    private string $lastName;
-    private int $nationality;
-    private string $uuid;
+    protected string $firstName;
+    protected string $lastName;
+    protected int $nationality;
+    protected string $uuid;
 
     public function getFirstName(): string{
         return $this->firstName;
@@ -28,5 +28,6 @@ class Actor extends Model implements Person
     public function getUUID(): string{
         return $this->uuid;
     }
+
     use HasFactory;
 }
