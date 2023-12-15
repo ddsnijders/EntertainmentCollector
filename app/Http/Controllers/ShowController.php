@@ -28,21 +28,22 @@ class ShowController extends Controller
         $this->store();
 
         $movies = Movies::all();
-        return view('shows', $movies);
+        return view('shows', ['movies' => $movies]);
 
     }
 
     public function store() {
-        $movie = new Movies();
-        $movie->setTitle('');
-        $movie->setDescription('');
-        $movie->setUUID('');
-        $movie->setScore(1);
-        $movie->setActors(new Collection());
-        $movie->setDirectors(new Collection());
-        $movie->setGenres([]);
-        $movie->setDuration(1);
-        $movie->save();
+        //$movie = new Movies();
+        //$movie->setTitle('a');
+        //$movie->setDescription('b');
+        //$movie->setUUID('c');
+        //$movie->setScore(1);
+        //$movie->setActors(new Collection());
+        //$movie->setDirectors(new Collection());
+        //$movie->setGenres([]);
+        //$movie->setDuration(1);
+        //$movie->save();
+
     }
 
     private function getShows(): Collection{

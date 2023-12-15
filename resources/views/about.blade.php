@@ -5,7 +5,7 @@
     @vite('resources/css/app.css')
         <title>Main Page</title>
     </head>
-    <body class="bg-red-100 dark:bg-stone-500">
+    <body class="bg-sky-200 dark:bg-stone-500">
         @include('header');
         <h1 class="text-3xl font-bold underline">Dit is de about pagina</h1>
     </body>

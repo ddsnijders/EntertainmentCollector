@@ -6,5 +6,13 @@
         <title>Main Page</title>
     </head>
     @include('header')
-    <body class="bg-red-100 dark:bg-stone-500 h-screen">
+    <div class="flex justify-center">
+    @foreach($movies as $movie)
+        <div class="bg-neutral-200 w-10/12 h-36 m-20">
+            {{ $movie->getTitle() }}
+        </div>
+
+    @endforeach
+    </div>
+    <body class="bg-sky-200 dark:bg-stone-500 h-screen">
 </html>

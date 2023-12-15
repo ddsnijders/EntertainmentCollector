@@ -17,26 +17,29 @@ class Movies extends Shows
     protected array $genres;
     protected int $duration;
     public $timestamps = false;
+    protected $casts = [
+        'genres' => 'array',
+    ];
 
     // Getters
     public function getTitle(): string
     {
-        return $this->title;
+        return $this->attributes['title'];
     }
 
     public function getDescription(): string
     {
-        return $this->description;
+        return $this->attributes['description'];
     }
 
     public function getUuid(): string
     {
-        return $this->uuid;
+        return $this->attributes['uuid'];
     }
 
     public function getScore(): float
     {
-        return $this->score;
+        return $this->attributes['score'];
     }
 
     public function getActors(): Collection
@@ -51,33 +54,33 @@ class Movies extends Shows
 
     public function getGenres(): array 
     {
-        return $this->genres;
+        return $this->attributes['genres'];
     }
 
     public function getDuration(): int
     {
-        return $this->duration;
+        return $this->attributes['duration'];
     }
 
     // Setters
     public function setTitle(string $title): void 
     {
-        $this->title = $title;
+        $this->attributes['title'] = $title;
     }
 
     public function setDescription(string $description): void
     {
-        $this->description = $description;
+        $this->attributes['description'] = $description;
     }
 
     public function setUUID(string $uuid): void
     {
-        $this->uuid = $uuid;
+        $this->attributes['uuid'] = $uuid;
     }
 
     public function setScore(float $score): void
     {
-        $this->score = $score;
+        $this->attributes['score'] = $score;
     }
 
     public function setActors(Collection $actors): void
@@ -92,12 +95,12 @@ class Movies extends Shows
 
     public function setGenres(array $genres): void
     {
-        $this->genres = $genres;
+        $this->attributes['genres'] = $genres;
     }
 
     public function setDuration(int $duration): void
     {
-        $this->duration = $duration;
+        $this->attributes['duration'] = $duration;
     }
 
 

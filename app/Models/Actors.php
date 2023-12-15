@@ -14,19 +14,19 @@ class Actors extends Model implements Person
     protected string $uuid;
 
     public function getFirstName(): string{
-        return $this->firstName;
+        return $this->attributes['firstName'];
     }
 
     public function getLastName(): string{
-        return $this->lastName;
+        return $this->attributes['lastName'];
     }
 
     public function getNationality(): int{
-        return $this->nationality;
+        return $this->attributes['nationality'];
     }
 
     public function getUUID(): string{
-        return $this->uuid;
+        return $this->attributes['uuid'];
     }
 
     use HasFactory;
