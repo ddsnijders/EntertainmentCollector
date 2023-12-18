@@ -5,7 +5,7 @@
     @vite('resources/css/app.css')
         <title>Main Page</title>
     </head>
-    <body class="bg-sky-200 dark:bg-stone-500 h-screen">
+    <body class="bg-gradient-to-r from-slate-700 to-slate-800 h-screen">
         @include('header');
         <div class="flex justify-center items-center h-screen">
         <div class="flex justify-around p-2">

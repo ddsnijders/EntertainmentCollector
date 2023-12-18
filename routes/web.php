@@ -28,6 +28,10 @@ Route::get('/home', function () {
 
 Route::get('/shows', [ShowController::class, 'show']);
 
+Route::get('/edit', function() {
+    return redirect('shows');
+});
+
 Route::get('/music', function () {
     return view('music');
 });
