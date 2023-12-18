@@ -8,7 +8,8 @@
     @include('header')
     <div class="flex justify-center">
     @foreach($movies as $movie)
-        <div class="bg-neutral-200 w-10/12 h-36 m-20">
+        <div class="bg-neutral-200 w-10/12 h-36 m-20 flex items-center">
+            <img class="object-contain h-32 w-40" src="{{$movie->getShowImageLink()}}">
             {{ $movie->getTitle() }}
         </div>
 

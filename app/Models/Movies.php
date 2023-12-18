@@ -12,9 +12,6 @@ class Movies extends Shows
     protected string $description;
     protected string $uuid;
     protected float $score;
-    protected Collection $actors;
-    protected Collection $directors;
-    protected array $genres;
     protected int $duration;
     public $timestamps = false;
     protected $casts = [
@@ -32,7 +29,7 @@ class Movies extends Shows
         return $this->attributes['description'];
     }
 
-    public function getUuid(): string
+    public function getUUID(): string
     {
         return $this->attributes['uuid'];
     }
@@ -42,24 +39,13 @@ class Movies extends Shows
         return $this->attributes['score'];
     }
 
-    public function getActors(): Collection
-    {
-        return $this->actors;
-    }
-
-    public function getDirectors(): Collection
-    {
-        return $this->directors;
-    }
-
-    public function getGenres(): array 
-    {
-        return $this->attributes['genres'];
-    }
-
     public function getDuration(): int
     {
         return $this->attributes['duration'];
+    }
+
+    public function getShowImageLink(): string{
+        return asset('images/' . $this->getUUID() . ".png");
     }
 
     // Setters
@@ -81,21 +67,6 @@ class Movies extends Shows
     public function setScore(float $score): void
     {
         $this->attributes['score'] = $score;
-    }
-
-    public function setActors(Collection $actors): void
-    {
-        $this->actors = $actors;
-    }
-
-    public function setDirectors(Collection $directors): void
-    {
-        $this->directors = $directors;
-    }
-
-    public function setGenres(array $genres): void
-    {
-        $this->attributes['genres'] = $genres;
     }
 
     public function setDuration(int $duration): void

@@ -24,10 +24,9 @@ class ShowController extends Controller
         array_push($movie, []);
         array_push($movie, 1);
         Movies::create($movie);*/
-
         $this->store();
 
-        $movies = Movies::all();
+        $movies = $this->getMovies();
         return view('shows', ['movies' => $movies]);
 
     }
@@ -54,7 +53,7 @@ class ShowController extends Controller
     }
 
     private function getMovies(): Collection{
-        $movies = Movie::all();
+        $movies = Movies::all();
         return $movies;
     }
 
