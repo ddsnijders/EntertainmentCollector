@@ -1,7 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
-//use app\Http\Controllers;
+use Request;
+use App;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,17 @@ Route::get('/home', function () {
     return view('home');
 });
 
+Route::get('/addshow', [AddShowController::class, 'show']);
+
+// Route::post('/addshow', function (Request $request){
+//     //App::call([AddShowController::class->store()] , ['data' => $request::all()]);
+//     return redirect('shows');
+// });
+
+Route::post('/addshow', [AddShowController::class, 'store']);
+
 Route::get('/shows', [ShowController::class, 'show']);
+
 
 Route::get('/edit', function() {
     return redirect('shows');

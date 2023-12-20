@@ -57,14 +57,23 @@ class ShowController extends Controller
         return $movies;
     }
 
+
+
     public function addMovie(): bool{
         $movie = new Movies();
         addShow($movie);
     }
 
+    public function deleteMovie(string $uuid): bool{
+        $movie = new Movies();
+        $this->deleteShow($movie);
+    }
+
+    private function deleteShow(Shows $show): bool{
+    }
+
 
     private function addShow(Shows $show): bool{
-        $show;
         try{
             $show->set;
             $show->save();

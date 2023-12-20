@@ -6,6 +6,9 @@
         <title>Main Page</title>
     </head>
     @include('header')
+    <div class="flex justify-center items-center m-10">
+        <a href="./addshow"><h2 class="text-slate-100 text-3xl">Add Show</h2></a>
+    </div>
     <div class="flex justify-center items-center flex-col-reverse">
     @foreach($movies as $movie)
         <div class="bg-neutral-200 w-10/12 h-48 m-5 flex items-center">

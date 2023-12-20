@@ -74,6 +74,5 @@ class Movies extends Shows
         $this->attributes['duration'] = $duration;
     }
 
-
     use HasFactory;
 }
