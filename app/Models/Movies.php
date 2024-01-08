@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
+use Ramsey\Uuid\Uuid;
 
 class Movies extends Shows
 {
@@ -45,33 +46,59 @@ class Movies extends Shows
     }
 
     public function getShowImageLink(): string{
-        return asset('images/' . $this->getUUID() . ".png");
+        //return asset('images/' . $this->getUUID() . ".png");
+        return asset('storage/images/' . $this->getUUID() . ".jpg");
     }
 
     // Setters
-    public function setTitle(string $title): void 
+    public function setTitle(?string $title): void 
     {
-        $this->attributes['title'] = $title;
+        if (!is_null($title)){
+            $this->attributes['title'] = $title;
+        }
+        else{
+            $this->attributes['title'] = "";
+        }
     }
 
-    public function setDescription(string $description): void
+    public function setDescription(?string $description): void
     {
-        $this->attributes['description'] = $description;
+        if (!is_null($description)){
+            $this->attributes['description'] = $description;
+        }
+        else{
+            $this->attributes['description'] = "";
+        }
     }
 
-    public function setUUID(string $uuid): void
+    public function setUUID(?string $uuid): void
     {
-        $this->attributes['uuid'] = $uuid;
+        if (!is_null($uuid)){
+            $this->attributes['uuid'] = $uuid;
+        }
+        else{
+            $this->attributes['uuid'] = Uuid::uuid4();
+        }
     }
 
-    public function setScore(float $score): void
+    public function setScore(?float $score): void
     {
-        $this->attributes['score'] = $score;
+        if (!is_null($score)){
+            $this->attributes['score'] = $score;
+        }
+        else{
+            $this->attributes['score'] = 0;
+        }
     }
 
-    public function setDuration(int $duration): void
+    public function setDuration(?int $duration): void
     {
-        $this->attributes['duration'] = $duration;
+        if (!is_null($duration)){
+            $this->attributes['duration'] = $duration;
+        }
+        else{
+            $this->attributes['duration'] = 0;
+        }
     }
 
     use HasFactory;
