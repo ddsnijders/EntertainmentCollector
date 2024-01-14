@@ -46,7 +46,15 @@ class Movies extends Shows
     }
 
     public function getShowImageLink(): string{
-        //return asset('images/' . $this->getUUID() . ".png");
+
+        
+        /*$extensions = ['.jpg', '.gif', '.png', '.jpeg'];
+        for ($i = 0; $i < count($extensions); $i++){
+            if (Storage::exists('storage/images/' . $this->getUUID() . $extensions[$i])){
+                return asset('storage/images/' . $this->getUUID() . $extensions[$i]);
+            }
+        }*/
+
         return asset('storage/images/' . $this->getUUID() . ".jpg");
     }
 

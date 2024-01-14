@@ -37,8 +37,10 @@ class AddShowController extends Controller
         
     }
 
-    private function storeThumbnail(mixed $thumbnail, mixed $uuid){
+    private function storeThumbnail(mixed $thumbnail, mixed $uuid): void{
+        if (!is_null($thumbnail)){
         $imageName = $uuid . '.' . $thumbnail->getClientOriginalExtension();
-        print_r($thumbnail->storeAs('public/images', $imageName));
+        $thumbnail->storeAs('public/images', $imageName);
+        }
     }
 }
